@@ -1,20 +1,40 @@
 <template>
   <div class="home">
     <v-img
-      src="../assets/background3.jpg"
+      src="../assets/background4.jpg"
       dark
-      max-height="500px"
+      eager
+      lazy-src="../assets/background4.jpg"
     >
+    <template v-slot:placeholder>
+      <v-row
+      class="fill-height ma-0"
+      align="center"
+      justify="center"
+        >
+        <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+      </v-row>
+    </template>
       <v-layout fill-height align-center>
         <v-container>
-          <v-row align="center" justify="center" class="white--text">
+          <v-row align="center" justify="center" class="white--text text-center">
             <v-col cols="12">
-              <div
-                :class="{'display-2 font-weight-bold ': $vuetify.breakpoint.smAndUp, 'title font-weight-bold': $vuetify.breakpoint.smAndDown}"
-              >Welcome To My Page</div>
-              <div
-                :class="{'headline': $vuetify.breakpoint.smAndUp, 'subtitle-1': $vuetify.breakpoint.smAndDown}"
-              >Look At My Project</div>
+              <v-avatar size="200">
+                <v-img src="../assets/awanda.jpg" 
+                eager
+                lazy-src="../assets/awanda.jpg" >
+                <template v-slot:placeholder>
+                  <v-row
+                  class="fill-height ma-0"
+                  align="center"
+                  justify="center"
+                    >
+                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                  </v-row>
+              </template>
+                </v-img>
+              </v-avatar>
+              <p class="display-2 mt-4 font-weight-bold">Awanda</p>
             </v-col>
           </v-row>
         </v-container>
